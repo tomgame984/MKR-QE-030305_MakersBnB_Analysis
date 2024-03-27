@@ -1,0 +1,119 @@
+## Spaces Page - Book a Space
+### Test Case 1
+```
+Test purpose:
+To check that the "Requests" link redirects the user to the Requests page.
+
+Input / Action:
+The user clicks the "Requests" link.
+
+Expected output:
+Redirects and loads Requests page.
+Assert by title "Requests".
+
+```
+
+### Test Case 2
+```
+Test purpose:
+To check that the "Sign out" link redirects the user to the Homepage and confirms that they have successfully logged out.
+
+Input / Action:
+The user clicks the "Sign out" link.
+
+Expected output:
+Redirects and loads Homepage.
+Displays a message "You have successfully logged out."
+Assert by title "Feel at home, anywhere".
+Assert by logout message.
+```
+
+### Test Case 3
+```
+Test purpose:
+To check that the "List a Space" button redirects the user to the New Space page.
+
+Input / Action:
+The user clicks the "List a Space" button.
+
+Expected output:
+Redirects and loads "New Space" page.
+Assert by the title "List a Space".
+```
+
+### Test Case 4
+```
+Test purpose:
+This is to check that when the user accesses the "Available From" field, they cannot enter a date from the past.
+
+Input / Action:
+The user enters a date = today - 5 days
+Example
+Today = 27/03/24 
+Date entered = 22/03/24
+
+Expected output:
+Assert Error message - "This date is in the past. Please enter a date that is at least the same as today."
+
+```
+
+### Test Case 5
+```
+Test purpose:
+This is to check that when the user accesses the "Available To" field, they cannot enter a date is before the date entered in the "Available from Field"
+
+Input / Action:
+The user enters a date that is less than Available From date.
+Example
+Available from = 27/03/24 
+Available to entered = 22/03/24
+
+Expected output:
+Assert Error message - "Available date needs to be after Available from date."
+
+```
+
+### Test Case 6
+```
+Test purpose:
+Assuming the dates entered are valid when the "List Spaces" button is clicked, the page refreshes and lists available spaces within the date range provided.
+
+Input / Action:
+User enters:
+1. Valid Available from date.
+2. Valid Available to date.
+3. Clicks "List Spaces Button".
+
+Expected output:
+Reloaded page, with spaces listed that are available within the specified date range.
+Assert that the records displayed are available according to the database.
+```
+
+### Test Case 7
+```
+Test purpose:
+This tests what happens if the user enters the date in the wrong format.
+
+Input / Action:
+The user enters a date in "Available From" as DD-MM-YY (field specifies DD/MM/YY)
+
+Expected output:
+Program automatically replaces "-" with "/" and returns a valid date.
+Assert reformatted date displays.
+```
+
+### Test Case 8
+```
+Test purpose:
+To test that, when user clicks on a specific space, they are redirected to the Space page displaying the correct space.
+
+Input / Action:
+The user clicks on the first property in the list.
+
+Assumption:
+Beautiful Relaxing Space is the name of the Space.
+
+Expected output:
+Program loads Space page.
+Assert title "Beautiful Relaxing Space"
+```
